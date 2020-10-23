@@ -191,13 +191,14 @@ h2 {
     padding-top: 1rem;
 }
 
-.heading-logo img {
-    float: left;
+.heading-menu-icon {
+    display: none;
 }
 
 .heading-logo p {
-    float: right;
-    margin-top: .75rem;
+    display: inline;
+    position: relative;
+    bottom: 12px;
     margin-left: .6rem;
 }
 
@@ -248,5 +249,61 @@ h2 {
 /* RESPONSIVENESS */
 
 @media only screen and (max-width: 480px) {
+    .header {
+        background-position: top;
+    }
 
+    .heading {
+        display: block;
+        text-align: center;
+    }
+
+
+    .heading-menu-icon {
+        display: block;
+        float: left;
+        margin-left: 20px;
+    }
+
+    .heading-menu-icon div {
+        width: 25px;
+        height: 3px;
+        background-color: var(--color-primary);
+        margin: 6px 0;
+        transition: .5s;
+    }
+
+    .heading-menu-icon:hover > div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .heading-menu-icon:hover > div:last-child {
+        transform: rotate(45deg);
+        position: relative;
+        bottom: 9px;
+    }
+
+    .heading-menu-icon:hover > div:first-child {
+        transform: rotate(-45deg);
+        position: relative;
+        top: 9px;
+    }
+
+    .heading-menu-icon:hover ~ .heading-menu {
+        display: block;
+    }
+
+    .heading-menu {
+        display: none;
+    }
+    
+    .heading-menu li {
+        display: block;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .heading-main {
+        margin-top: 5rem;
+    }
 }
